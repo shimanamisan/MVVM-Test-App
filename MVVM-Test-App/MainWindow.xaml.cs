@@ -24,6 +24,8 @@ namespace MVVM_Test_App
         public MainWindow()
         {
             InitializeComponent();
+
+            this.DataContext = new MainWindowViewModel();
         }
     }
 }
