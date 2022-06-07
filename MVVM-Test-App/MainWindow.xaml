@@ -37,7 +37,7 @@
             Grid.Column="2"
             Grid.ColumnSpan="3"
             Margin="5"
-            Text="{Binding TextBoxValue}" />
+            Text="{Binding TextBoxValue, UpdateSourceTrigger=PropertyChanged}" />
         <TextBlock
             Grid.Row="3"
             Grid.Column="2"
