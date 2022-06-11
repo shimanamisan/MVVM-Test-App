@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="TextData.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MahApps.Metro" Version="2.4.9" />
   </ItemGroup>
 
@@ -16,6 +20,12 @@
     <Folder Include="Model\" />
     <Folder Include="ViewModel\" />
     <Folder Include="View\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="TextData.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
