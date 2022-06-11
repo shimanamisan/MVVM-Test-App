@@ -1,10 +1,15 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Input; // 追加
+using System.IO; // 追加
 
 namespace MVVM_Test_App
 {
     internal class MainWindowViewModel : INotifyPropertyChanged
     {
+        // 追加
+        public ICommand ExecuteFetchTextDataButton { get; private set; }
+
         // プロパティの変更時に発火する
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -24,6 +29,22 @@ namespace MVVM_Test_App
                     OnPropertyChanged();
                 }
             }
+        }
+
+        // 追加
+        public MainWindowViewModel()
+        {
+            ExecuteFetchTextDataButton = new DelegateCommand<object>(FetchTextData);
+        }
+
+        // 追加
+        private void FetchTextData(object? obj)
+        {
+            FetchTextModel model = new FetchTextModel(Path.Combine(Directory.GetCurrentDirectory(), "TextData.txt"));
+
+            string result = model.FetchTextData();
+
+            if(result != string.Empty) TextBoxValue = result;
         }
 
         /// <summary>

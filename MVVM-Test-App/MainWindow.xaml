@@ -50,6 +50,7 @@
             Grid.ColumnSpan="3"
             Margin="5"
             Content="アクセントが効いた四角いボタン"
+            Command="{Binding ExecuteFetchTextDataButton}"
             Style="{StaticResource MahApps.Styles.Button.Square.Accent}" />
     </Grid>
 </mah:MetroWindow>
